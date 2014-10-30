@@ -6,9 +6,49 @@ if (Modernizr.localstorage) {
 }
 
 
+
+
+
+
 $('#name').blur(function(){
   console.log("it works");
-  localstorage.setItem("name", this.value())
+  localStorage.setItem("name", $(this).val())
+
+});
+
+$('#email').blur(function(){
+  console.log("1");
+  localStorage.setItem("email", $(this).val())
+});
+
+$('#class').blur(function(){
+  console.log("2");
+  localStorage.setItem("class", $(this).val())
+});
+
+$('#number').blur(function(){
+  console.log("3");
+  localStorage.setItem("number", $(this).val())
+});
+
+$('#chapter').blur(function(){
+  console.log("4");
+  localStorage.setItem("chapter", $(this).val())
+});
+
+$('#heading').blur(function(){
+  console.log("5");
+  localStorage.setItem("heading", $(this).val())
+});
+
+$('#issue').blur(function(){
+  console.log("6");
+  localStorage.setItem("issue", $(this).val())
+});
+
+$('#goal').blur(function(){
+  console.log($(this).val());
+  localStorage.setItem("goal", $(this).val())
 });
 
 
@@ -22,6 +62,8 @@ $('#name').blur(function(){
 
 
 window.onload = function() {
+    var form1 = localStorage.getItem("name");
+    $("#name").val(form1);
     var fileInput = document.getElementById('fileInput');
     var fileDisplayArea = document.getElementById('fileDisplayArea');
 
